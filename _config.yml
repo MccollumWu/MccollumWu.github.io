@@ -1,8 +1,9 @@
 # Site settings 配置站点
-title   : "Mccollum's Blog"
+
 description: 'This is Mccollum's blog, welcomes and thanks for visiting!'
 keyword: 'Mccollum Mccollum's Blog'
 url: 'https://mccollumwu.github.io' # your host
+title   : "Mccollum's Blog"
 
 # if you don't need baseurl, you should leave this value blank.
 baseurl: ''
