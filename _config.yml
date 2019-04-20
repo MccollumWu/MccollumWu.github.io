@@ -81,6 +81,7 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
+  enable_codetray:  true
 
 # RSS
 RSS: false
