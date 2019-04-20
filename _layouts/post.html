@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 {% include post-head.html %}
+{% include leancloud-analytics.html %}
 
 <body>
   <!--[if lt IE 10]>
@@ -34,6 +35,15 @@
     {% if page.subtitle %}
     <h2 class="post-subtitle">{{ page.subtitle }}</h2>
     {% endif %}
+     
+    {% if site.leancloud.enable %}
+       <span id="{{ page.url }}" class="add_leancloud_visitors" data-flag-title="{{ page.title }}">
+    	<span class="octicon octicon-eye"></span>
+    	<span class="old-visitors-count" style="display: none;"></span>
+    	<span class="leancloud-visitors-count"></span>
+   	 <span class="post-meta-item-text">visit</span>
+</span>
+   {% endif %}
 
     <article class="markdown-body">
       {{ page.content }}
