@@ -34,6 +34,9 @@ nightMode: false
 # 回到顶部按钮 by ray-eldath
 b2t: true
 
+leancloud:
+  app_id: 'sNkJgxidfBMtsItTEdHYtMjt-gzGzoHsz'
+  app_key: '8ww3s6bjw8S6FskwvUDCidAG'
 # Comments 评论功能
 comments: true
 
