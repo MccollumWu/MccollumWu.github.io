@@ -36,8 +36,8 @@ b2t: true
 
 leancloud:
   enable: true
-  app_id: 'sNkJgxidfBMtsItTEdHYtMjt-gzGzoHsz'
-  app_key: '8ww3s6bjw8S6FskwvUDCidAG'
+  app_id: sNkJgxidfBMtsItTEdHYtMjt-gzGzoHsz
+  app_key: 8ww3s6bjw8S6FskwvUDCidAG
 # Comments 评论功能
 comments: true
 
