@@ -29,7 +29,7 @@ avatar: 'http://chittagongit.com//images/w-icon/w-icon-22.jpg'
 search: true
 
 # Night mode
-nightMode: true
+nightMode: false
 
 # 回到顶部按钮 by ray-eldath
 b2t: true
