@@ -31,6 +31,9 @@ search: true
 # Night mode
 nightMode: true
 
+# 回到顶部按钮 by ray-eldath
+b2t: true
+
 # Comments 评论功能
 comments: true
 
@@ -41,7 +44,7 @@ comments:
   gitalk_repo: 'MccollumWu.github.io'
   gitalk_owner: 'MccollumWu'
   gitalk_admin: 'MccollumWu'
-  distractionFreeMode: false
+  distractionFreeMode: true
 
 # MathJax 公式支持 by Ray-Eldath
 mathjax: true
