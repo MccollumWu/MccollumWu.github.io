@@ -21,7 +21,14 @@
       <h1>{{ page.title }}</h1>
       <div class="post-meta">
         <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="{{ site.url }}" target="_blank" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</a></></span>
-        <time class="post-meta-item" datetime="{{ page.date | date:"%y-%m-%d" }}"><i class="iconfont icon-date"></i>{{ page.date | date_to_string }}</time>
+        <span> <time class="post-meta-item" datetime="{{ page.date | date:"%y-%m-%d" }}"><i class="iconfont icon-date"></i>{{ page.date | date_to_string }}</time> </span>
+	{% if site.leancloud.enable %}
+        <span id="{{ post.url }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
+         <span class="post-meta-divider">|</span>
+         <span class="post-meta-item-text"> visit:  </span>
+         <span class="leancloud-visitors-count"></span>
+        </span>
+       {% endif %}
       </div>
     </div>
     {% if page.cover %}
@@ -36,14 +43,6 @@
     <h2 class="post-subtitle">{{ page.subtitle }}</h2>
     {% endif %}
      
-    {% if site.leancloud.enable %}
-       <span id="{{ page.url }}" class="add_leancloud_visitors" data-flag-title="{{ page.title }}">
-    	<span class="octicon octicon-eye"></span>
-    	<span class="old-visitors-count" style="display: none;"></span>
-    	<span class="leancloud-visitors-count"></span>
-   	 <span class="post-meta-item-text">visit</span>
-</span>
-   {% endif %}
 
     <article class="markdown-body">
       {{ page.content }}
