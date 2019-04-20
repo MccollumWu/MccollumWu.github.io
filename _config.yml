@@ -33,14 +33,15 @@ nightMode: true
 
 # Comments 评论功能
 comments:
+   gitalk: true
    gitalk:
-   clientID    : 292ea60df771284480ad # GitHub Application Client ID
-   clientSecret: e6cb961ff0e2dbcea3effa87fec44694eecb475e # GitHub Application Client Secret
-   repository  : MccollumWu.github.io # GitHub repo
-   owner       : MccollumWu # GitHub repo owner
-   admin: # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
+     clientID    : 292ea60df771284480ad # GitHub Application Client ID
+     clientSecret: e6cb961ff0e2dbcea3effa87fec44694eecb475e # GitHub Application Client Secret
+     repository  : MccollumWu.github.io # GitHub repo
+     owner       : MccollumWu # GitHub repo owner
+     admin: # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
       # - your GitHub Id
-      MccollumWu
+        MccollumWu
 
 # MathJax 公式支持 by Ray-Eldath
 mathjax: true
