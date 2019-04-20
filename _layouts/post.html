@@ -9,10 +9,7 @@
 <![endif]-->
   <input id="nm-switch" type="hidden" value="{{ site.nightMode }}"> {% include header.html %}
 
-  <header
-    class="g-banner post-header {{ site.postPatterns | prepend: 'post-pattern-' }} {{ site.theme-color | prepend: 'bgcolor-' }} {% unless page.cover %}post-no-cover{% endunless %}"
-    data-theme="{{ site.theme-color }}"
-  >
+  <header class="g-banner post-header {{ site.postPatterns | prepend: 'post-pattern-' }} {{ site.theme-color | prepend: 'bgcolor-' }} {% unless page.cover %}post-no-cover{% endunless %}" data-theme="{{ site.theme-color }}">
     <div class="post-wrapper">
       <div class="post-tags">
         {% if page.tags.size > 0 %}
@@ -23,7 +20,7 @@
       </div>
       <h1>{{ page.title }}</h1>
       <div class="post-meta">
-        <span class="post-meta-item"><i class="iconfont icon-author"></i>{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</span>
+        <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="{{ site.url }}" target="_blank" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</a></></span>
         <time class="post-meta-item" datetime="{{ page.date | date:"%y-%m-%d" }}"><i class="iconfont icon-date"></i>{{ page.date | date_to_string }}</time>
       </div>
     </div>
@@ -32,6 +29,7 @@
       <div class="post-cover" style="background: url('{{ page.cover }}') center no-repeat; background-size: cover;"></div>
     {% endif %}
   </header>
+	
 
   <div class="post-content visible">
     {% if page.subtitle %}
@@ -70,6 +68,11 @@
       </ul>
       {% endif %}
     </section>
+	  
+	  {% if site.reward.enable %}
+	  {% include reward.html %}
+	  {% endif %}
+	  
     <section class="post-footer-item read-next">
       {% if page.next.url %}
       <div class="read-next-item">
@@ -98,9 +101,8 @@
           {% endif %}
       </div>
       {% endif %}
-    </section>
-    
-     <br />
+
+	  <br />
 	  <article>
     <section class="post-footer-item comment">
       <div id="disqus_thread"></div>
@@ -109,7 +111,10 @@
   </section>
 	  </article>
        <br />
-
+	
+      {% include creativecommons-license.html %}
+	
+	<br />
   {% include footer.html %}
 
   <script src="/assets/js/social-share.min.js"></script>
@@ -127,7 +132,28 @@
       wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
     });
   </script>
-  
+
+  {% if site.comments.disqus %}
+  <script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document,
+        s = d.createElement('script');
+      s.src = '{{ site.comments.disqus_url }}';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  {% endif %}
+
   {% if site.comments.gitalk %}
   <script>
     var gitalk = new Gitalk({
@@ -142,7 +168,7 @@
     gitalk.render('gitalk_container')
   </script>
     {% endif %}
-  
+
   <script src="/assets/js/prism.js"></script>
   <script src="/assets/js/index.min.js"></script>
 </body>
