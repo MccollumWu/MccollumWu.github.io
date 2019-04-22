@@ -22,11 +22,14 @@
         <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="{{ site.url }}" target="_blank" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</a></></span>
         <time class="post-meta-item" datetime="{{ page.date | date:"%y-%m-%d" }}"><i class="iconfont icon-date"></i>{{ page.date | date_to_string }}</time> 
 	{% if site.leancloud.enable %}
-  	<span class="post-meta-item" id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
-    	<img class="post-meta-item" src="/assets/vendor/octicons/svg/eye.svg" width=16 height=16>
-    	<a href="#"><span class="leancloud-visitors-count"></span>visit</a>
- 	</span>
-	{% endif %}
+<div>
+  <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
+    Visited:
+    <a href="#"><span class="leancloud-visitors-count"></span>次</a>
+  </span>
+</div>
+{% endif %}
+
       </div>
     </div>
     {% if page.cover %}
